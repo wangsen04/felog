@@ -13,16 +13,16 @@ var jsLogSchema = new Schema({
     address: String, //IP/地址
     os: String, //操作系统
     browse: String, //浏览器型号版本
-    docType: String, //浏览器模式
-    userName: String, //登录用户
-    errorPage: String, //发生错误所在页
+    docType: String, //浏览器模式 u
+    userName: String, //登录用户 u
+    errorPage: String, //发生错误所在页 u
     errorType: String, //错误类型
-    fileName: String, //发生错误文件
-    errorMsg: String, //错误消息
-    errorRow: String, //Js错误发生的所在文件行数
-    errorColumn: String, //Js错误发生的所在文件列数，有则上传
-    errorStack: String, //Js错误堆栈信息第二行，有则上传
-    createTime: String  //创建时间
+    fileName: String, //发生错误文件 u
+    errorMsg: String, //错误消息 u
+    errorRow: String, //Js错误发生的所在文件行数u
+    errorColumn: String, //Js错误发生的所在文件列数，有则上传u
+    errorStack: String, //Js错误堆栈信息第二行，有则上传 u
+    createTime: { type: Date, default: Date.now}  //创建时间
 })
 
 var ajaxLogSchema = new Schema({
@@ -30,14 +30,14 @@ var ajaxLogSchema = new Schema({
     address: String, //IP/地址
     os: String, //操作系统
     browse: String, //浏览器型号版本
-    docType: String, //浏览器模式
-    userName: String, //登录用户
-    errorPage: String, //发生错误所在页
-    rqUrl:String,//ajax请求路径
-    rq:String,//Ajax请求参数
-    ajaxStatus:String,//0: success, 1: error
-    httpStatus:String,//HTTP响应状态
-    res: String  //Ajax响应数据
+    docType: String, //浏览器模式 u
+    userName: String, //登录用户 u
+    errorPage: String, //发生错误所在页 u
+    rqUrl:String,//ajax请求路径 u
+    rq:String,//Ajax请求参数  u
+    ajaxStatus:String,//0: success, 1: error u
+    httpStatus:String,//HTTP响应状态 u
+    res: String  //Ajax响应数据 u
 })
 
 //构建jslog的表
