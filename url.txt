@@ -1,0 +1,1 @@
+http://localhost:3000/monitor/jslog.gif?domain=sina.com&address=192.168.9.1&os=win7&browse&chrome&docType=html5&userName=zhangsan&errorPage=http://nuomi.com/index&errorType=sym&fileName=base.js&errorMsg=is not find&errorRow=88&errorColumn=201&errorStack=33

@@ -3,19 +3,19 @@
  */
 var express = require('express');
 var url = require('url');
-var dns = require('dns');
-var extend = require('../util/extend.js');
 var model = require('../model/db-model.js');
 var router = express.Router();
 
 //jslog存储
 router.get('/jslog.gif', function (req, res) {
-    var queryPart = url.parse(req.url, true);
+    var queryPart = url.parse(req.url, true).query;
+    queryPart.createTime=new Date();
     var jsLog = new model.JsLog(queryPart);
     jsLog.save(function (err) {
         if (err) {
-            console.log('save failed');
+            console.log(err);
         } else {
+            console.log('save success');
             res.send('已保存');
         }
     });
@@ -33,8 +33,9 @@ router.get('/ajaxlog.gif', function (req, res) {
         } else {
             res.send('已保存ajaxlog');
         }
-
     });
 });
+
+
 
 module.exports = router;

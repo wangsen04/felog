@@ -22,7 +22,7 @@ var jsLogSchema = new Schema({
     errorRow: String, //Js错误发生的所在文件行数u
     errorColumn: String, //Js错误发生的所在文件列数，有则上传u
     errorStack: String, //Js错误堆栈信息第二行，有则上传 u
-    createTime: { type: Date, default: Date.now,expires: '24h'}  //创建时间
+    createTime: { type: Date}  //创建时间
 })
 
 var ajaxLogSchema = new Schema({

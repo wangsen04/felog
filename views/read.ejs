@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+
+    <!-- Bootstrap -->
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/base.css'/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<form class="form-inline log-container" method="post">
+    <div class="form-group">
+        <input type="text" class="form-control" name="domain" placeholder="域名">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="startTime" placeholder="开始时间">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="endTime" placeholder="结束时间">
+    </div>
+    <button type="submit" class="btn btn-default">搜索</button>
+</form>
+
+
+<div class="log-container">
+    <table class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>域名</th>
+            <th>所在页</th>
+            <th>错误类型</th>
+            <th>错误文件</th>
+            <th>错误消息</th>
+            <th>所在文件行数</th>
+            <th>所在文件列数</th>
+            <th>堆栈信息第二行</th>
+            <th>错误发生次数</th>
+            <th>time</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <% for(var i = 0; i < jsLog.length; i++) { %>
+        <tr>
+            <td><%= jsLog[i]._id ? jsLog[i]._id : "" %></td>
+            <td><%= jsLog[i].domain ? jsLog[i].domain : "" %></td>
+            <td><%= jsLog[i].errorPage ? jsLog[i].errorPage : "" %></td>
+            <td><%= jsLog[i].errorType ? jsLog[i].errorType : "" %></td>
+            <td><%= jsLog[i].fileName ? jsLog[i].fileName : "" %></td>
+            <td><%= jsLog[i].errorMsg ? jsLog[i].errorMsg : "" %></td>
+            <td><%= jsLog[i].errorRow ? jsLog[i].errorRow : "" %></td>
+            <td><%= jsLog[i].errorColumn ? jsLog[i].errorColumn : "" %></td>
+            <td><%= jsLog[i].errorStack ? jsLog[i].errorStack : "" %></td>
+            <td><%= jsLog[i].errorCount ? jsLog[i].errorCount : "" %></td>
+            <td><%= moment(new Date(jsLog[i].createTime).getTime()).format('YYYY-MM-DD HH:mm:ss') %></td>
+
+        </tr>
+        <% } %>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/javascripts/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
