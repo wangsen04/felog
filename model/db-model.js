@@ -22,7 +22,7 @@ var jsLogSchema = new Schema({
     errorRow: String, //Js错误发生的所在文件行数u
     errorColumn: String, //Js错误发生的所在文件列数，有则上传u
     errorStack: String, //Js错误堆栈信息第二行，有则上传 u
-    createTime: { type: Date, default: Date.now}  //创建时间
+    createTime: { type: Date, default: Date.now,expires: '24h'}  //创建时间
 })
 
 var ajaxLogSchema = new Schema({
@@ -40,10 +40,10 @@ var ajaxLogSchema = new Schema({
     res: String  //Ajax响应数据 u
 })
 
-//构建jslog的表
+//构建jslog
 exports.JsLog = mongoose.model('jslog', jsLogSchema);
 
-//构建ajaxlog的表
+//构建ajaxlog
 exports.AjaxLog = mongoose.model('ajaxlog', ajaxLogSchema);
 
 
