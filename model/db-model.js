@@ -1,3 +1,10 @@
+/**
+ * @author        wangsen04
+ * @date          2014-11-17
+ * @version       1.0.0
+ * @fileOverview  db-model.js
+ * @description   MongoDB建模，数据库文档结构
+ */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.connect('mongodb://localhost/test-fe-log');

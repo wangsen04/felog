@@ -1,5 +1,9 @@
 /**
- * Created by wangsen04 on 11/17 0017.
+ * @author        wangsen04
+ * @date          2014-11-17
+ * @version       1.0.0
+ * @fileOverview  read.js
+ * @description   控制查询页面路由，接收get,post参数，MongoDB查询
  */
 var express = require('express');
 var url = require('url');
