@@ -1,6 +1,6 @@
 /**
  * @file 前端日志统计脚本
- * @author 赵军 zhaojun04@baidu.com
+
  * @date 2014-11-17
  * @version 1.0.0
  */
